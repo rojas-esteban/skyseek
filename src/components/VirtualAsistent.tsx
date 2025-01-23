@@ -2,15 +2,20 @@
 import { useState } from "react";
 import Loader from "./loader";
 
+interface Message {
+  role: string;
+  content: string;
+}
+
 
 const DeepSeekWidget = () => {
   const [question, setQuestion] = useState("");
   const [answer, setAnswer] = useState("");
   const [isLoading, setIsLoading] = useState(false);
-  const [error, setError] = useState(null);
-  const [messages, setMessages] = useState([]); // Historial de la conversación
+  const [error, setError] = useState<string | null>(null);
+  const [messages, setMessages] = useState<Message[]>([]) // Historial de la conversación
 
-  const handleSubmit = async (e) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
     setError(null);
@@ -64,10 +69,12 @@ const DeepSeekWidget = () => {
 
       setAnswer(assistantReply); // Muestra la última respuesta
       setQuestion(""); // Limpia el campo de pregunta
-    } catch (error) {
-      setError(error.message);
-    } finally {
-      setIsLoading(false);
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        setError(error.message); // Accede a error.message solo si error es una instancia de Error
+      } else {
+        setError("Un error desconocido ocurrió"); // Mensaje genérico si el error no es una instancia de Error
+      }
     }
   };
 
