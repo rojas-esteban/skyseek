@@ -6,31 +6,31 @@ const DeepSeekWidget = () => {
   const [answer, setAnswer] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState(null);
-  const [model, setModel] = useState("deepseek-chat"); // Estado para el modelo seleccionado
+  const [messages, setMessages] = useState([]); // Historial de la conversación
 
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsLoading(true);
     setError(null);
 
-    const API_URL = process.env.URL;
-    const API_KEY = process.env.KEY;
+    const API_KEY = process.env.NEXT_PUBLIC_KEY;
 
     try {
-      const response = await fetch(API_URL, {
+      // Agrega la nueva pregunta al historial
+      const newMessages = [
+        ...messages,
+        { role: "user", content: question },
+      ];
+
+      const response = await fetch("https://api.deepseek.com/v1/chat/completions", {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
           Authorization: `Bearer ${API_KEY}`,
         },
         body: JSON.stringify({
-          model: model, // Usa el modelo seleccionado
-          messages: [
-            {
-              role: "user",
-              content: question,
-            },
-          ],
+          model: "deepseek-chat",
+          messages: newMessages, // Envía todo el historial
         }),
       });
 
@@ -39,7 +39,16 @@ const DeepSeekWidget = () => {
       }
 
       const data = await response.json();
-      setAnswer(data.choices[0].message.content);
+      const assistantReply = data.choices[0].message.content;
+
+      // Agrega la respuesta del asistente al historial
+      setMessages([
+        ...newMessages,
+        { role: "assistant", content: assistantReply },
+      ]);
+
+      setAnswer(assistantReply); // Muestra la última respuesta
+      setQuestion(""); // Limpia el campo de pregunta
     } catch (error) {
       setError(error.message);
     } finally {
@@ -49,16 +58,23 @@ const DeepSeekWidget = () => {
 
   return (
     <div className="flex flex-col gap-8">
+      
+
+      {/* Muestra el historial de la conversación */}
+      <div className="space-y-4">
+        {messages.map((msg, index) => (
+          <div
+            key={index}
+            className={`p-4 rounded-lg ${
+              msg.role === "user" ? "bg-blue-500" : "bg-green-500"
+            }`}
+          >
+            <strong>{msg.role === "user" ? "Tú" : "SkyDeep"}:</strong> {msg.content}
+          </div>
+        ))}
+      </div>
       <h1 className="text-center">Interroge SkyDeep, Esteban invite 😉</h1>
       <form onSubmit={handleSubmit} className="flex gap-4">
-        <select
-          value={model}
-          onChange={(e) => setModel(e.target.value)}
-          className="bg-stone-700 px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all"
-        >
-          <option value="deepseek-chat">DeepSeek Chat</option>
-          <option value="deepseek-code">DeepSeek Code</option> {/* Ejemplo de otro modelo */}
-        </select>
         <input
           type="text"
           value={question}
@@ -77,13 +93,6 @@ const DeepSeekWidget = () => {
       </form>
 
       {error && <p style={{ color: "red" }}>{error}</p>}
-
-      {answer && (
-        <div>
-          <h2>Respuesta:</h2>
-          <p>{answer}</p>
-        </div>
-      )}
     </div>
   );
 };
