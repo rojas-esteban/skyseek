@@ -8,20 +8,17 @@ interface Message {
   content: string;
 }
 
-
 const DeepSeekWidget = () => {
   const [question, setQuestion] = useState("");
   const [answer, setAnswer] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
-  const [messages, setMessages] = useState<Message[]>([]) // Historial de la conversación
+  const [messages, setMessages] = useState<Message[]>([]); // Historial de la conversación
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsLoading(true);
     setError(null);
-
-
 
     const API_KEY = process.env.NEXT_PUBLIC_KEY;
 
@@ -55,11 +52,9 @@ const DeepSeekWidget = () => {
         }),
       });
 
-
       if (!response.ok) {
         throw new Error(`Error: ${response.statusText}`);
       }
-
 
       const data = await response.json();
       const assistantReply = data.choices[0].message.content;
@@ -74,8 +69,6 @@ const DeepSeekWidget = () => {
       setQuestion(""); // Limpia el campo de pregunta
       setIsLoading(false);
 
-      
-
     } catch (error: unknown) {
       if (error instanceof Error) {
         setError(error.message); // Accede a error.message solo si error es una instancia de Error
@@ -87,10 +80,8 @@ const DeepSeekWidget = () => {
 
   return (
     <div className="flex flex-col gap-8">
-      
-
       {/* Muestra el historial de la conversación */}
-      <div className="space-y-4">
+      <div className="space-y-4 overflow-y-auto max-h-[400px]">
         {messages.map((msg, index) => (
           <div
             key={index}
@@ -101,32 +92,29 @@ const DeepSeekWidget = () => {
             <strong>{msg.role === "user" ? "Tú" : "Esteban"}:</strong> {msg.content}
           </div>
         ))}
-      <ScrollToBottom messages={messages} />
-
+        {/* Aquí paso messages a ScrollToBottom */}
+        <ScrollToBottom messages={messages} />
       </div>
 
-      <h1 className="text-center font-semibold text-2xl sm:text-2xl ">Interroge Esteban, ton professeur de langues 😉</h1>
+      <h1 className="text-center font-semibold text-2xl sm:text-2xl">Interroge Esteban, ton professeur de langues 😉</h1>
 
-      {isLoading ? <Loader/> : (
+      {isLoading ? <Loader /> : (
         <form onSubmit={handleSubmit} className="flex gap-4">
-        <input
-          type="text" 
-          value={question}
-          onChange={(e) => setQuestion(e.target.value)}
-          placeholder="Vas-y, pose ta question… je ne mords pas !   :)"
-          className="bg-stone-700 w-[500px] px-6 py-4 text-lg border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all"
-        />
-        <button
-          type="submit"
-          className="px-6 py-2 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all"
-        >
-          {isLoading ? "Cargando..." : "Preguntar"}
-        </button>
-      </form>
-
+          <input
+            type="text"
+            value={question}
+            onChange={(e) => setQuestion(e.target.value)}
+            placeholder="Vas-y, pose ta question… je ne mords pas ! :)"
+            className="bg-stone-700 w-[500px] px-6 py-4 text-lg border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all"
+          />
+          <button
+            type="submit"
+            className="px-6 py-2 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all"
+          >
+            {isLoading ? "Cargando..." : "Preguntar"}
+          </button>
+        </form>
       )}
-
-      
 
       {error && <p style={{ color: "red" }}>{error}</p>}
     </div>

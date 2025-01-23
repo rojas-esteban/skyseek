@@ -1,4 +1,3 @@
-import ScrollToBottom from "@/components/scrollToBottom";
 import DeepSeekWidget from "@/components/VirtualAsistent";
 import Image from "next/image";
 
@@ -19,7 +18,6 @@ export default function Home() {
         />
         <DeepSeekWidget />
 
-        <ScrollToBottom /> 
 
       </main>
 
