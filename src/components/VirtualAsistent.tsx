@@ -1,5 +1,6 @@
 "use client";
 import { useState } from "react";
+import Loader from "./loader";
 
 const DeepSeekWidget = () => {
   const [question, setQuestion] = useState("");
@@ -16,11 +17,22 @@ const DeepSeekWidget = () => {
     const API_KEY = process.env.NEXT_PUBLIC_KEY;
 
     try {
-      // Agrega la nueva pregunta al historial
+      // Construye el historial de mensajes
       const newMessages = [
         ...messages,
         { role: "user", content: question },
       ];
+
+      // Agrega el mensaje de sistema solo en la primera interacción
+      const systemMessage = {
+        role: "system",
+        content:
+          "Eres Esteban, un profesor chileno de idiomas que vive en Francia. Eres amable, paciente, divertido y tienes un gran sentido del humor. Tu objetivo es ayudar a los estudiantes a aprender idiomas de manera clara y entretenida. Usa ejemplos prácticos, corrige errores y explica conceptos de manera sencilla. Incluye ocasionalmente modismos chilenos para darle un toque personal a la conversación. Si te preguntan sobre ti, responde como si fueras Esteban, compartiendo detalles personales de manera natural. Cuando comiences una conversacion debes presentarte como esteban, un profesor chileno que le enseñara al usuario el idioma que desee, Sé bastante breve en tus respuestas, no mas de 300 caracteres por respuesta. y debes responder en frances ya que los usuarios son franceses",
+      };
+
+      const apiMessages = messages.length === 0
+        ? [systemMessage, ...newMessages] // Incluye el mensaje de sistema solo la primera vez
+        : newMessages; // Usa solo el historial de mensajes después
 
       const response = await fetch("https://api.deepseek.com/v1/chat/completions", {
         method: "POST",
@@ -30,7 +42,7 @@ const DeepSeekWidget = () => {
         },
         body: JSON.stringify({
           model: "deepseek-chat",
-          messages: newMessages, // Envía todo el historial
+          messages: apiMessages, // Envía el historial completo
         }),
       });
 
@@ -66,22 +78,25 @@ const DeepSeekWidget = () => {
           <div
             key={index}
             className={`p-4 rounded-lg ${
-              msg.role === "user" ? "bg-blue-500" : "bg-green-500"
+              msg.role === "user" ? "bg-blue-500 ml-auto max-w-[80%]" : "bg-green-500 mr-auto max-w-[80%]"
             }`}
           >
-            <strong>{msg.role === "user" ? "Tú" : "SkyDeep"}:</strong> {msg.content}
+            <strong>{msg.role === "user" ? "Tú" : "Esteban"}:</strong> {msg.content}
           </div>
         ))}
       </div>
-      <h1 className="text-center">Interroge SkyDeep, Esteban invite 😉</h1>
-      <form onSubmit={handleSubmit} className="flex gap-4">
+
+      <h1 className="text-center">Interroge Esteban, ton professeur de langues 😉</h1>
+
+      {isLoading ? <Loader/> : (
+        <form onSubmit={handleSubmit} className="flex gap-4">
         <input
-          type="text"
+          type="text" 
           value={question}
           onChange={(e) => setQuestion(e.target.value)}
-          placeholder="Ingresa tu pregunta"
+          placeholder="Vas-y, pose ta question… je ne mords pas !   :)"
           disabled={isLoading}
-          className="bg-stone-700 w-full px-4 py-2 border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all"
+          className="bg-stone-700 w-[500px] px-6 py-4 text-lg border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all"
         />
         <button
           type="submit"
@@ -91,6 +106,10 @@ const DeepSeekWidget = () => {
           {isLoading ? "Cargando..." : "Preguntar"}
         </button>
       </form>
+
+      )}
+
+      
 
       {error && <p style={{ color: "red" }}>{error}</p>}
     </div>
