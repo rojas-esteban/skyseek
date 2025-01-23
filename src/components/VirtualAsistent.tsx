@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import Loader from "./loader";
+import ScrollToBottom from "./scrollToBottom";
 
 interface Message {
   role: string;
@@ -54,9 +55,11 @@ const DeepSeekWidget = () => {
         }),
       });
 
+
       if (!response.ok) {
         throw new Error(`Error: ${response.statusText}`);
       }
+
 
       const data = await response.json();
       const assistantReply = data.choices[0].message.content;
@@ -69,6 +72,10 @@ const DeepSeekWidget = () => {
 
       setAnswer(assistantReply); // Muestra la última respuesta
       setQuestion(""); // Limpia el campo de pregunta
+      setIsLoading(false);
+
+      
+
     } catch (error: unknown) {
       if (error instanceof Error) {
         setError(error.message); // Accede a error.message solo si error es una instancia de Error
@@ -94,6 +101,8 @@ const DeepSeekWidget = () => {
             <strong>{msg.role === "user" ? "Tú" : "Esteban"}:</strong> {msg.content}
           </div>
         ))}
+      <ScrollToBottom messages={messages} />
+
       </div>
 
       <h1 className="text-center font-semibold text-2xl sm:text-2xl ">Interroge Esteban, ton professeur de langues 😉</h1>
@@ -105,12 +114,10 @@ const DeepSeekWidget = () => {
           value={question}
           onChange={(e) => setQuestion(e.target.value)}
           placeholder="Vas-y, pose ta question… je ne mords pas !   :)"
-          disabled={isLoading}
           className="bg-stone-700 w-[500px] px-6 py-4 text-lg border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all"
         />
         <button
           type="submit"
-          disabled={isLoading}
           className="px-6 py-2 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all"
         >
           {isLoading ? "Cargando..." : "Preguntar"}

@@ -1,3 +1,4 @@
+import ScrollToBottom from "@/components/scrollToBottom";
 import DeepSeekWidget from "@/components/VirtualAsistent";
 import Image from "next/image";
 
@@ -14,10 +15,11 @@ export default function Home() {
           alt="Descripción de la imagen"
           width={500}  
           height={300} 
-          className="rounded-lg shadow-lg border border-gray-200"
+          className="rounded-lg shadow-lg border border-gray-200 mb-8"
         />
         <DeepSeekWidget />
 
+        <ScrollToBottom /> 
 
       </main>
 
