@@ -99,21 +99,22 @@ const DeepSeekWidget = () => {
       <h1 className="text-center font-semibold text-2xl sm:text-2xl">Interroge Esteban, ton professeur de langues 😉</h1>
 
       {isLoading ? <Loader /> : (
-        <form onSubmit={handleSubmit} className="flex gap-4">
-          <input
-            type="text"
-            value={question}
-            onChange={(e) => setQuestion(e.target.value)}
-            placeholder="Vas-y, pose ta question… je ne mords pas ! :)"
-            className="bg-stone-700 w-[500px] px-6 py-4 text-lg border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all"
-          />
-          <button
-            type="submit"
-            className="px-6 py-2 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all"
-          >
-            {isLoading ? "Cargando..." : "Preguntar"}
-          </button>
-        </form>
+        <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4">
+        <input
+          type="text"
+          value={question}
+          onChange={(e) => setQuestion(e.target.value)}
+          placeholder="Vas-y, pose ta question… je ne mords pas ! :)"
+          className="bg-stone-700 w-full sm:w-[500px] px-6 py-4 text-lg border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all"
+        />
+        <button
+          type="submit"
+          className="px-6 py-2 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all"
+        >
+          {isLoading ? "Cargando..." : "Preguntar"}
+        </button>
+      </form>
+      
       )}
 
       {error && <p style={{ color: "red" }}>{error}</p>}
