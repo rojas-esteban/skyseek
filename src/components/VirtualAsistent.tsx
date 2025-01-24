@@ -97,7 +97,7 @@ const DeepSeekWidget = () => {
         <ScrollToBottom messages={messages} />
       </div>
 
-      <h1 className="text-center font-semibold text-2xl sm:text-2xl">Interroge Esteban 🌲🏕️🌳</h1>
+      <h1 className="text-center font-semibold text-2xl sm:text-2xl">Esteban, le spécialiste en randonnée 🌲🏕️🌳</h1>
 
       {isLoading ? <Loader /> : (
         <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4">
@@ -105,7 +105,7 @@ const DeepSeekWidget = () => {
           type="text"
           value={question}
           onChange={(e) => setQuestion(e.target.value)}
-          placeholder="Vas-y, pose ta question… je ne mords pas ! :)"
+          placeholder="Pose ta question, je suis cool ! :)"
           className="bg-stone-700 w-full sm:w-[500px] px-6 py-4 text-lg border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all"
         />
         <button
