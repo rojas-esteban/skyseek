@@ -48,7 +48,7 @@ const DeepSeekWidget = () => {
           "Accept": "application/json"
         },
         body: JSON.stringify({
-          model: "deepseek-chat",
+          model: "deepseek-v3",
           messages: apiMessages, // Envía el historial completo
         }),
       });
