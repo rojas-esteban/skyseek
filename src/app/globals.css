@@ -23,3 +23,9 @@ body {
 .p-4 {
   padding: 0;
 }
+
+ol, ul, menu {
+  list-style: disc  ;
+  margin: 0;
+  padding: 1rem;
+}
