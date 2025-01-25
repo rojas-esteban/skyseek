@@ -79,8 +79,15 @@ const DeepSeekWidget = () => {
     }
   };
 
+
   return (
+
+    
     <div className="flex flex-col gap-8">
+    
+
+
+      
       {/* Muestra el historial de la conversación */}
       <div className="space-y-4 overflow-y-auto max-h-[400px]">
         {messages.map((msg, index) => (
@@ -109,9 +116,7 @@ const DeepSeekWidget = () => {
         <ScrollToBottom messages={messages} />
       </div>
 
-      <h1 className="text-center font-semibold text-2xl sm:text-2xl">
-        Esteban, le spécialiste en randonnée 🌲🏕️🌳
-      </h1>
+      
 
       {isLoading ? (
         <Loader />

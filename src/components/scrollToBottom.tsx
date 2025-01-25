@@ -12,7 +12,7 @@ const ScrollToBottom: React.FC<ScrollToBottomProps> = ({ messages }) => {
     if (bottomRef.current) {
       bottomRef.current.scrollIntoView({ behavior: "smooth" });
     }
-  }, [messages]);
+  }, []);
 
   return <div ref={bottomRef} />;
 };
