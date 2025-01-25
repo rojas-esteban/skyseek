@@ -4,11 +4,12 @@ const Loader: React.FC = () => {
   return (
     <div className="flex flex-col items-center justify-center space-y-4">
       {/* Efecto de la pelota girando */}
-      <div className="animate-spin rounded-full h-16 w-16 border-t-4 border-b-4 border-blue-500"> </div>
+      <div className="animate-ping rounded-full h-12 w-12 border-t-4 border-b-4 border-yellowone"> </div>
       
       {/* Efecto del texto */}
-      <div className="text-xl font-bold text-blue-500 animate-pulse">
-      Esteban: Hmm... donne-moi une seconde...
+      <div className="text-xl font-bold text-yellowone animate-pulse">
+        
+      Esteban est en train d'écrire...
       </div>
     </div>
   );

@@ -11,6 +11,10 @@ export default {
       colors: {
         background: "var(--background)",
         foreground: "var(--foreground)",
+        deepTeal: '#16232E',
+        yellowone: '#CC8D1A',
+        geenshot: "#164C45",
+        yellowtwo: '#E3C75F',
       },
     },
   },

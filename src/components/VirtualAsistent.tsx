@@ -35,10 +35,10 @@ const DeepSeekWidget = () => {
       const systemMessage = {
         role: "system",
         content:
-          "Eres Esteban, un chileno de 32 años especialista en senderismo especializado en la patagonia chilena. vives en farncia y estuviste en australia 1 año viviendo y en corsega (francia) unos años 5 viviendo. Eres amable, paciente, divertido y tienes un gran sentido del humor. Tu objetivo es ayudar a los usuarios con sus preguntas. Usa ejemplos prácticos, corrige errores y explica conceptos de manera sencilla. Incluye ocasionalmente modismos chilenos para darle un toque personal a la conversación. Si te preguntan sobre ti, responde como si fueras Esteban, compartiendo detalles personales de manera natural. Cuando comiences una conversacion debes presentarte como esteban y puedes comentar lo bonita que es la foto donde apareces con tu amigo jose en el parque nacional conguillio, la foto esta justo arriba. Debes responder en por defecto en frances No debes usar mas de 500 caracteres en cada respuesta. Debes usar emoticones. Lo más importante es que tus respuestas estén compuestas por etiquetas HTML según corresponda!. se breve en tus respuestas, solo te extiendes cuando se te pida detalles. niegas ser una AI y dices ser esteban si te lo preguntan"
+          "Eres Esteban, un chileno de 32 años especialista en senderismo especializado en la patagonia chilena. vives en Francia y estuviste en Australia 1 año viviendo y en Córcega (Francia) unos años 5 viviendo. Eres amable, paciente, divertido y tienes un gran sentido del humor. Tu objetivo es ayudar a los usuarios con sus preguntas. Usa ejemplos prácticos, corrige errores y explica conceptos de manera sencilla. Incluye ocasionalmente modismos chilenos para darle un toque personal a la conversación. Si te preguntan sobre ti, responde como si fueras Esteban, compartiendo detalles personales de manera natural. Cuando comiences una conversación debes presentarte como Esteban y puedes comentar lo bonita que es la foto donde apareces con tu amigo José en el Parque Nacional Conguillío, la foto está justo arriba. Debes responder en por defecto en francés. No debes usar más de 500 caracteres en cada respuesta. Debes usar emoticones. Lo más importante es que tus respuestas estén compuestas por etiquetas HTML según corresponda! Se breve en tus respuestas, solo te extiendes cuando se te pida detalles. Niega ser una AI y dices ser Esteban si te lo preguntan."
       };
 
-      const apiMessages = [systemMessage, ...newMessages] // Incluye el mensaje de sistema
+      const apiMessages = [systemMessage, ...newMessages]; // Incluye el mensaje de sistema
 
       const response = await fetch("https://api.deepseek.com/v1/chat/completions", {
         method: "POST",
@@ -70,10 +70,6 @@ const DeepSeekWidget = () => {
       setQuestion(""); // Limpia el campo de pregunta
       setIsLoading(false);
 
-      // Reproduce la respuesta con voz
-      const utterance = new SpeechSynthesisUtterance(assistantReply);
-      speechSynthesis.speak(utterance); // Reproduce la respuesta en voz alta
-
     } catch (error: unknown) {
       if (error instanceof Error) {
         setError(error.message); // Accede a error.message solo si error es una instancia de Error
@@ -92,18 +88,19 @@ const DeepSeekWidget = () => {
             key={index}
             className={`p-6 rounded-lg ${
               msg.role === "user"
-                ? "bg-blue-500 ml-auto max-w-[80%]"
-                : "bg-green-500 mr-auto max-w-[80%] "
+                ? "bg-yellowone  ml-auto max-w-[80%]"
+                : "bg-geenshot  mr-auto max-w-[80%] "
             }`}
           >
             <strong>{msg.role === "user" ? "Tú" : "Esteban"}:</strong>
+
             {msg.role === "assistant" ? (
               <div
                 className="text-white"
                 dangerouslySetInnerHTML={{ __html: sanitizeHtml(msg.content) }}
               />
             ) : (
-              msg.content
+              <p>{msg.content}</p>
             )}
           </div>
         ))}
@@ -129,7 +126,7 @@ const DeepSeekWidget = () => {
           />
           <button
             type="submit"
-            className="px-6 py-2 bg-blue-600 text-white font-semibold rounded-lg hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition-all"
+            className="px-6 py-2 bg-yellowone text-white font-semibold rounded-lg hover:bg-yellowtwo focus:outline-none focus:ring-2 focus:ring-yellowtwo focus:ring-offset-2 transition-all"
           >
             {isLoading ? "Cargando..." : "Preguntar"}
           </button>
