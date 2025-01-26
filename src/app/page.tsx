@@ -12,7 +12,7 @@ export default function Home() {
         <Header/>
 
         <main className="flex flex-col row-start-2 justify-around items-center h-full w-full">
-        <h1 className="text-center font-semibold text-2xl sm:text-2xl">Esteban, le spécialiste en randonnée 🌲🏕️🌳</h1>
+        <h1 className="text-center font-semibold text-2xl m-4 sm:text-2xl">Esteban, le spécialiste en randonnée 🌲🏕️🌳</h1>
           <Image
             src="/453633559_4227827887443827_2217402644947367570_n.jpg"
             alt="Descripción de la imagen"
