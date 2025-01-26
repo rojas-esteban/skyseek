@@ -80,7 +80,7 @@ const DeepSeekWidget = () => {
 
 
   return (
-    <div className="flex flex-col gap-8">
+    <div className="flex flex-col gap-8 mb-8">
       {/* Muestra el historial de la conversación */}
       <div className="space-y-4 overflow-y-auto max-h-[400px]">
         {messages.map((msg, index) => (

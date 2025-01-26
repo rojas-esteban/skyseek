@@ -2,7 +2,7 @@ import React from "react";
 
 const Loader: React.FC = () => {
   return (
-    <div className="flex flex-col items-center justify-center space-y-4">
+    <div className="flex flex-col items-center mb-8 justify-center space-y-4">
       {/* Efecto de la pelota girando */}
       <div className="animate-ping rounded-full h-12 w-12 border-t-4 border-b-4 border-yellowone"> </div>
       
