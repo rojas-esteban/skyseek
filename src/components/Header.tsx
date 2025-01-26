@@ -24,7 +24,7 @@ const Header: React.FC = () => {
             >
               <Link
                 href="#senderismo"
-                className="text-white p-5 hover:text-gray-300 transition-all"
+                className="text-white p-3 hover:text-gray-300 transition-all"
                 onClick={() => handleLinkClick("#senderismo")} // Actualiza el enlace activo
               >
                 Randonnée
@@ -35,10 +35,10 @@ const Header: React.FC = () => {
               : "ml-0 list-none font-bold"}>
               <Link
                 href="#yoga"
-                className="text-white p-5 hover:text-gray-300 transition-all"
+                className="text-white p-3 hover:text-gray-300 transition-all"
                 onClick={() => handleLinkClick("#yoga")}
               >
-                Yoga
+                Code
               </Link>
             </li>
             <li className={activeLink === "#idiomas" 
@@ -46,7 +46,7 @@ const Header: React.FC = () => {
               : "ml-0 list-none font-bold"}>
               <Link
                 href="#idiomas"
-                className="text-white p-5 hover:text-gray-300 transition-all"
+                className="text-white p-3 hover:text-gray-300 transition-all"
                 onClick={() => handleLinkClick("#idiomas")}
               >
                 Langues
@@ -57,10 +57,10 @@ const Header: React.FC = () => {
               : "ml-0 list-none font-bold"}>
               <Link
                 href="#genio"
-                className="text-white p-5 hover:text-gray-300 transition-all"
+                className="text-white p-3 hover:text-gray-300 transition-all"
                 onClick={() => handleLinkClick("#genio")}
               >
-                Génie
+                GPT4
               </Link>
             </li>
           </ul>

@@ -39,3 +39,13 @@ ol, ul, menu {
   margin-left: 0 !important; /* Para asegurarte de que el margen izquierdo se elimine */
 }
 
+.pb-20 {
+  padding-bottom: 5rem;
+}
+
+.gap-16 {
+  gap: 0;
+}
+
+
+

@@ -112,7 +112,7 @@ const DeepSeekWidget = () => {
       {isLoading ? (
         <Loader />
       ) : (
-        <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row gap-4">
+        <form onSubmit={handleSubmit} className="flex flex-col justify-center sm:flex-row gap-4">
           <input
             type="text"
             value={question}
