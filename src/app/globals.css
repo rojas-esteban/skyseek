@@ -34,3 +34,8 @@ ol, ul, menu {
   color: white;
 }
 
+
+.space-x-6 > :not([hidden]) ~ :not([hidden]) {
+  margin-left: 0 !important; /* Para asegurarte de que el margen izquierdo se elimine */
+}
+

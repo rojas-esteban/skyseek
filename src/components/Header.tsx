@@ -5,7 +5,7 @@ import React from "react";
 
 const Header: React.FC = () => {
   // Estado para gestionar el enlace activo
-  const [activeLink, setActiveLink] = useState<string | null>(null);
+  const [activeLink, setActiveLink] = useState<string>("#senderismo");
 
   // Función para actualizar el enlace activo cuando se hace clic
   const handleLinkClick = (link: string) => {
@@ -18,19 +18,9 @@ const Header: React.FC = () => {
         {/* Navbar */}
         <nav>
           <ul className="flex space-x-6">
-          <li
-              className={activeLink === "#senderismo" ? " rounded-xl bg-yellow-800 list-none font-bold" : "list-none font-bold"}
-            >
-              <Link
-                href="#senderismo"
-                className="text-white p-5 hover:text-gray-300 transition-all"
-                onClick={() => handleLinkClick("#Home")} // Actualiza el enlace activo
-              >
-                Home
-              </Link>
-            </li>
+          
             <li
-              className={activeLink === "#senderismo" ? " rounded-xl bg-yellow-800 list-none font-bold" : "list-none font-bold"}
+              className={activeLink === "#senderismo" ?  "ml-0 rounded-xl bg-yellow-800 list-none font-bold" : "ml-0 list-none font-bold"}
             >
               <Link
                 href="#senderismo"
@@ -40,7 +30,9 @@ const Header: React.FC = () => {
                 Randonnée
               </Link>
             </li>
-            <li className={activeLink === "#yoga" ? " rounded-xl bg-yellow-800 list-none font-bold" : "list-none font-bold"}>
+            <li className={activeLink === "#yoga" 
+              ?  " ml- rounded-xl bg-yellow-800 list-none font-bold" 
+              : "ml-0 list-none font-bold"}>
               <Link
                 href="#yoga"
                 className="text-white p-5 hover:text-gray-300 transition-all"
@@ -49,7 +41,9 @@ const Header: React.FC = () => {
                 Yoga
               </Link>
             </li>
-            <li className={activeLink === "#idiomas" ? " rounded-xl bg-yellow-800 list-none font-bold" : "list-none font-bold"}>
+            <li className={activeLink === "#idiomas" 
+              ?  "ml-0 rounded-xl bg-yellow-800 list-none font-bold" 
+              : "ml-0 list-none font-bold"}>
               <Link
                 href="#idiomas"
                 className="text-white p-5 hover:text-gray-300 transition-all"
@@ -58,7 +52,9 @@ const Header: React.FC = () => {
                 Langues
               </Link>
             </li>
-            <li className={activeLink === "#genio" ? " rounded-xl bg-yellow-800 list-none font-bold" : "list-none font-bold"}>
+            <li className={activeLink === "#genio" 
+              ?  "ml-0 rounded-xl bg-yellow-800 list-none font-bold" 
+              : "ml-0 list-none font-bold"}>
               <Link
                 href="#genio"
                 className="text-white p-5 hover:text-gray-300 transition-all"
