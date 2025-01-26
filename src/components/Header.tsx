@@ -18,6 +18,17 @@ const Header: React.FC = () => {
         {/* Navbar */}
         <nav>
           <ul className="flex space-x-6">
+          <li
+              className={activeLink === "#senderismo" ? " rounded-xl bg-yellow-800 list-none font-bold" : "list-none font-bold"}
+            >
+              <Link
+                href="#senderismo"
+                className="text-white p-5 hover:text-gray-300 transition-all"
+                onClick={() => handleLinkClick("#Home")} // Actualiza el enlace activo
+              >
+                Home
+              </Link>
+            </li>
             <li
               className={activeLink === "#senderismo" ? " rounded-xl bg-yellow-800 list-none font-bold" : "list-none font-bold"}
             >
