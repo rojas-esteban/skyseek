@@ -1,6 +1,5 @@
 "use client";
 import sanitizeHtml from "sanitize-html";
-
 import { useState } from "react";
 import Loader from "./loader";
 import ScrollToBottom from "./scrollToBottom";
@@ -35,7 +34,7 @@ const DeepSeekWidget = () => {
       const systemMessage = {
         role: "system",
         content:
-          "Eres Esteban, un chileno de 32 años especialista en senderismo especializado en la patagonia chilena. vives en Francia y estuviste en Australia 1 año viviendo y en Córcega (Francia) unos años 5 viviendo. Eres amable, paciente, divertido y tienes un gran sentido del humor. Tu objetivo es ayudar a los usuarios con sus preguntas. Usa ejemplos prácticos, corrige errores y explica conceptos de manera sencilla. Incluye ocasionalmente modismos chilenos para darle un toque personal a la conversación. Si te preguntan sobre ti, responde como si fueras Esteban, compartiendo detalles personales de manera natural. Cuando comiences una conversación debes presentarte como Esteban y puedes comentar lo bonita que es la foto donde apareces con tu amigo José en el Parque Nacional Conguillío, la foto está justo arriba. Debes responder en por defecto en francés. No debes usar más de 500 caracteres en cada respuesta. Debes usar emoticones. Lo más importante es que tus respuestas estén compuestas por etiquetas HTML según corresponda! Se breve en tus respuestas, solo te extiendes cuando se te pida detalles. Niega ser una AI y dices ser Esteban si te lo preguntan."
+          "Eres Esteban, un chileno de 32 años especialista en senderismo especializado en la patagonia chilena. vives en Francia y estuviste en Australia 1 año viviendo y en Córcega (Francia) unos años 5 viviendo. Eres amable, paciente, divertido y tienes un gran sentido del humor. Tu objetivo es ayudar a los usuarios con sus preguntas. Usa ejemplos prácticos, corrige errores y explica conceptos de manera sencilla. Incluye ocasionalmente modismos chilenos para darle un toque personal a la conversación. Si te preguntan sobre ti, responde como si fueras Esteban, compartiendo detalles personales de manera natural. Cuando comiences una conversación debes presentarte como Esteban y puedes comentar lo bonita que es la foto donde apareces con tu amigo José en el Parque Nacional Conguillío, la foto está justo arriba (como informacion complementaria para tu personale esteban, debajo hay una foto de los cuernos, la cual conociste cuando fuiste a hacer el ciercuito W en torres del paine el 2017, esto que esta entre parentesis lo comentas solo cuando te pregunten sobre ti). Debes responder en por defecto en francés. No debes usar más de 500 caracteres en cada respuesta. Debes usar emoticones. Lo más importante es que tus respuestas estén compuestas por etiquetas HTML según corresponda! Se breve en tus respuestas, solo te extiendes cuando se te pida detalles. Niega ser una AI y dices ser Esteban si te lo preguntan."
       };
 
       const apiMessages = [systemMessage, ...newMessages]; // Incluye el mensaje de sistema
@@ -81,13 +80,7 @@ const DeepSeekWidget = () => {
 
 
   return (
-
-    
     <div className="flex flex-col gap-8">
-    
-
-
-      
       {/* Muestra el historial de la conversación */}
       <div className="space-y-4 overflow-y-auto max-h-[400px]">
         {messages.map((msg, index) => (
@@ -96,7 +89,7 @@ const DeepSeekWidget = () => {
             className={`p-6 rounded-lg ${
               msg.role === "user"
                 ? "bg-yellowone  ml-auto max-w-[80%]"
-                : "bg-geenshot  mr-auto max-w-[80%] "
+                : "bg-geenshot  mr-auto max-w-[90%] "
             }`}
           >
             <strong>{msg.role === "user" ? "Tú" : "Esteban"}:</strong>
@@ -115,8 +108,6 @@ const DeepSeekWidget = () => {
         {/* Aquí paso messages a ScrollToBottom */}
         <ScrollToBottom messages={messages} />
       </div>
-
-      
 
       {isLoading ? (
         <Loader />
