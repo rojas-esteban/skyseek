@@ -84,7 +84,7 @@ const DeepSeekWidget = () => {
   return (
 
     <div className="flex flex-col gap-8 mb-8">
-      <h1 className="text-center font-semibold text-2xl m-4 sm:text-2xl"> Explications 💬, débogages 🐞 et tout sur le code 💻 </h1>
+      <h1 className="text-center font-semibold text-2xl m-4 sm:text-2xl"> Explications 💬, debug 🐞 et tout sur le code 💻 </h1>
           {/* <Image
             src="/453633559_4227827887443827_2217402644947367570_n.jpg"
             alt="Descripción de la imagen"
@@ -103,7 +103,7 @@ const DeepSeekWidget = () => {
                 : "bg-geenshot  mr-auto max-w-[90%] "
             }`}
           >
-            <strong>{msg.role === "user" ? "Tú" : "Esteban"}:</strong>
+            <strong>{msg.role === "user" ? "Tú" : "Code Master"}:</strong>
 
             {msg.role === "assistant" ? (
               <div
