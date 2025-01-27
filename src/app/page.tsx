@@ -15,10 +15,10 @@ export default function Home() {
             <li className={""}>
                 <Link
                   href="/gptAi"
-                  className="text-white p-3 hover:text-gray-300 transition-all"
+                  className="text-white  hover:text-gray-300 transition-all"
         
                 >
-                  <div className="p-12 font text-lg font-bold bg-white text-black shadow-lg rounded-lg transform hover:scale-105 transition duration-300 hover:bg-calipso">
+                  <div className="p-12 font text-lg font-bold bg-white text-black shadow-lg rounded-lg transform hover:scale-105 transition duration-300 hover:bg-calipso max-sm:bg-calipso ">
                   GPT4
                   </div>
                 </Link>
@@ -29,10 +29,10 @@ export default function Home() {
               <li className={""}>
                 <Link
                   href="codeAi"
-                  className="text-white p-3 hover:text-gray-300 transition-all"
+                  className="text-white  hover:text-gray-300 transition-all"
         
                 >
-                  <div className="p-12 font text-lg font-bold bg-white text-black shadow-lg rounded-lg transform hover:scale-105 transition duration-300 hover:bg-calipso">
+                  <div className="p-12 font text-lg font-bold bg-white text-black shadow-lg rounded-lg transform hover:scale-105 transition duration-300 hover:bg-calipso max-sm:bg-calipso ">
                   Code
                   </div>
                 </Link>
@@ -40,10 +40,10 @@ export default function Home() {
               <li className={""}>
                 <Link
                   href="/languagesAi"
-                  className="text-white p-3 hover:text-gray-300 transition-all"
+                  className="text-white  hover:text-gray-300 transition-all"
         
                 >
-                  <div className="p-12 font text-lg font-bold bg-white text-black shadow-lg rounded-lg transform hover:scale-105 transition duration-300 hover:bg-calipso">
+                  <div className="p-12 font text-lg font-bold bg-white text-black shadow-lg rounded-lg transform hover:scale-105 transition duration-300 hover:bg-calipso max-sm:bg-calipso ">
                   Langues
                   </div>
                 </Link>
@@ -53,10 +53,10 @@ export default function Home() {
               >
                 <Link
                   href="/trekking"
-                  className="text-white p-3 hover:text-gray-300 transition-all"
+                  className="text-white  hover:text-gray-300 transition-all"
         
                 >
-                  <div className="p-12 font text-lg font-bold bg-white text-black shadow-lg rounded-lg transform hover:scale-105 transition duration-300 hover:bg-calipso">
+                  <div className="p-12 font text-lg font-bold bg-white text-black shadow-lg rounded-lg transform hover:scale-105 transition duration-300 hover:bg-calipso max-sm:bg-calipso max-sm:gap- ">
                   Randonnée
                   </div>
                 </Link>
