@@ -84,7 +84,7 @@ const DeepSeekWidget = () => {
   return (
 
     <div className="flex flex-col gap-8 mb-8">
-      <h1 className="text-center font-semibold text-2xl m-4 sm:text-2xl"> Explicaciones 💬, debugs 🐞 y todo sobre código 💻 </h1>
+      <h1 className="text-center font-semibold text-2xl m-4 sm:text-2xl"> Explications 💬, débogages 🐞 et tout sur le code 💻 </h1>
           {/* <Image
             src="/453633559_4227827887443827_2217402644947367570_n.jpg"
             alt="Descripción de la imagen"
@@ -128,7 +128,7 @@ const DeepSeekWidget = () => {
             type="text"
             value={question}
             onChange={(e) => setQuestion(e.target.value)}
-            placeholder="Message ChatGPT-4"
+            placeholder="Message..."
             className="bg-stone-700 w-full sm:w-[500px] px-6 py-4 text-lg border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all"
           />
           <button

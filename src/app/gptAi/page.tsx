@@ -84,7 +84,7 @@ const DeepSeekWidget = () => {
   return (
 
     <div className="flex flex-col gap-8 mb-8">
-      <h1 className="text-center font-semibold text-2xl m-4 sm:text-2xl">GPT-4</h1>
+      <h1 className="text-center font-semibold text-2xl m-4 sm:text-2xl">GPT-4 </h1>
           {/* <Image
             src="/453633559_4227827887443827_2217402644947367570_n.jpg"
             alt="Descripción de la imagen"

@@ -90,7 +90,7 @@ const DeepSeekWidget = () => {
             alt="Descripción de la imagen"
             width={300}
             height={300}
-            className="rounded-lg shadow-xl  border-green-200 mb-8 w-auto h-auto object-cover sm:max-w-md"
+            className="rounded-lg shadow-xl  border-green-200  w-auto h-auto object-cover sm:max-w-md m-auto"
           />
       {/* Muestra el historial de la conversación */}
       <div className="space-y-4 overflow-y-auto max-h-[400px]">
