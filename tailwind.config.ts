@@ -16,6 +16,7 @@ export default {
         geenshot: "#164C45",
         yellowtwo: '#E3C75F',
         selectedB: 'rgba(52, 61, 70, 0.5)',
+        calipso: "#09a698",
       },
     },
   },
