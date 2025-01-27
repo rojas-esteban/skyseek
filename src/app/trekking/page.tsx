@@ -85,12 +85,12 @@ const DeepSeekWidget = () => {
 
     <div className="flex flex-col gap-8 mb-8">
       <h1 className="text-center font-semibold text-2xl m-4 sm:text-2xl">Esteban, le spécialiste en randonnée 🌲🏕️🌳</h1>
-          <Image
+      <Image
             src="/453633559_4227827887443827_2217402644947367570_n.jpg"
             alt="Descripción de la imagen"
             width={300}
             height={300}
-            className="rounded-lg shadow-xl  border-green-200 mb-8 w-auto h-auto object-cover sm:max-w-md"
+            className="rounded-lg shadow-xl  border-green-200  w-auto h-auto object-cover sm:max-w-md m-auto"
           />
       {/* Muestra el historial de la conversación */}
       <div className="space-y-4 overflow-y-auto max-h-[400px]">

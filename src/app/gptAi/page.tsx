@@ -103,7 +103,7 @@ const DeepSeekWidget = () => {
                 : "bg-geenshot  mr-auto max-w-[90%] "
             }`}
           >
-            <strong>{msg.role === "user" ? "Tú" : "Esteban"}:</strong>
+            <strong>{msg.role === "user" ? "Tú" : "GPT-4"}:</strong>
 
             {msg.role === "assistant" ? (
               <div

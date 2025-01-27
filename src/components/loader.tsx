@@ -9,7 +9,7 @@ const Loader: React.FC = () => {
       {/* Efecto del texto */}
       <div className="text-xl font-bold text-yellowone animate-pulse">
         
-      Esteban est en train d'écrire...
+      Rédaction en cours...
       </div>
     </div>
   );
