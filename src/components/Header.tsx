@@ -2,6 +2,7 @@
 import Link from "next/link";
 import { useState } from "react"; // Importa useState
 import React from "react";
+import Image from "next/image";
 
 const Header: React.FC = () => {
   // Estado para gestionar el enlace activo
@@ -13,14 +14,28 @@ const Header: React.FC = () => {
   };
 
   return (
-    <header className="fixed top-0 left-0 w-full bg-yellowone shadow-md z-50">
-      <div className="flex justify-center">
+    <header className="fixed   top-0 left-0 w-full bg-yellowone shadow-md z-50">
+      <div className="flex flex-row justify-center">
         {/* Navbar */}
-        <nav>
+        <nav className="flex flex-row justify-center">
+        <Link
+                href="#home"
+                className="pl-4 m-auto"
+                onClick={() => handleLinkClick("#home")} // Actualiza el enlace activo
+              >
+                <Image
+                 src="/logoOrange.png"
+                 alt="Descripción de la imagen"
+                 width={30}
+                  height={30}
+                  className="rounded-lg shadow-xl  border-green-200 "
+                  />
+              </Link>
           <ul className="flex space-x-6">
           
+          
             <li
-              className={activeLink === "#senderismo" ?  "ml-0 rounded-xl bg-yellow-800 list-none font-bold" : "ml-0 list-none font-bold"}
+              className={activeLink === "#senderismo" ?  "ml-0 rounded-xl bg-selectedB list-none font-bold" : "ml-0 list-none font-bold"}
             >
               <Link
                 href="#senderismo"
@@ -31,7 +46,7 @@ const Header: React.FC = () => {
               </Link>
             </li>
             <li className={activeLink === "#yoga" 
-              ?  " ml- rounded-xl bg-yellow-800 list-none font-bold" 
+              ?  " ml- rounded-xl bg-selectedB list-none font-bold" 
               : "ml-0 list-none font-bold"}>
               <Link
                 href="#yoga"
@@ -42,7 +57,7 @@ const Header: React.FC = () => {
               </Link>
             </li>
             <li className={activeLink === "#idiomas" 
-              ?  "ml-0 rounded-xl bg-yellow-800 list-none font-bold" 
+              ?  "ml-0 rounded-xl bg-selectedB list-none font-bold" 
               : "ml-0 list-none font-bold"}>
               <Link
                 href="#idiomas"
@@ -53,7 +68,7 @@ const Header: React.FC = () => {
               </Link>
             </li>
             <li className={activeLink === "#genio" 
-              ?  "ml-0 rounded-xl bg-yellow-800 list-none font-bold" 
+              ?  "ml-0 rounded-xl bg-selectedB list-none font-bold" 
               : "ml-0 list-none font-bold"}>
               <Link
                 href="#genio"
