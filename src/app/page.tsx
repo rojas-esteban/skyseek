@@ -10,8 +10,8 @@ export default function Home() {
 
         
       <div className="flex flex-col items-center  ">
-        <h1 className="font-bold text-2xl">Choisis ton IA ! 🤖</h1>
-        <ul className="flex gap-4 list-none space-x-4">
+        <h1 className="font-bold text-2xl p-8">Choisis ton IA ! 🤖</h1>
+        <ul className="flex flex-col sm:flex-row gap-4 list-none">
             <li className={""}>
                 <Link
                   href="/gptAi"
