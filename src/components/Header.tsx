@@ -6,7 +6,7 @@ import Image from "next/image";
 
 const Header: React.FC = () => {
   // Estado para gestionar el enlace activo
-  const [activeLink, setActiveLink] = useState<string>("/trekking");
+  const [activeLink, setActiveLink] = useState<string|null>("null");
 
   // Función para actualizar el enlace activo cuando se hace clic
   const handleLinkClick = (link: string) => {
