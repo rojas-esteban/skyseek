@@ -6,7 +6,7 @@ import Image from "next/image";
 
 const Header: React.FC = () => {
   // Estado para gestionar el enlace activo
-  const [activeLink, setActiveLink] = useState<string>("#senderismo");
+  const [activeLink, setActiveLink] = useState<string>("/trekking");
 
   // Función para actualizar el enlace activo cuando se hace clic
   const handleLinkClick = (link: string) => {
@@ -19,9 +19,9 @@ const Header: React.FC = () => {
         {/* Navbar */}
         <nav className="flex flex-row justify-center">
         <Link
-                href="#home"
+                href="/"
                 className="p-2 m-auto"
-                onClick={() => handleLinkClick("#home")} // Actualiza el enlace activo
+                onClick={() => handleLinkClick("/")} // Actualiza el enlace activo
               >
                 <Image
                  src="/logoOrange.png"
@@ -32,52 +32,55 @@ const Header: React.FC = () => {
                   />
               </Link>
           <ul className="flex space-x-6">
-          
-          
-            <li
-              className={activeLink === "#senderismo" ?  "ml-0 rounded-xl bg-selectedB list-none font-bold" : "ml-0 list-none font-bold"}
-            >
-              <Link
-                href="#senderismo"
-                className="text-white p-3 hover:text-gray-300 transition-all"
-                onClick={() => handleLinkClick("#senderismo")} // Actualiza el enlace activo
-              >
-                Randonnée
-              </Link>
-            </li>
-            <li className={activeLink === "#yoga" 
-              ?  " ml- rounded-xl bg-selectedB list-none font-bold" 
-              : "ml-0 list-none font-bold"}>
-              <Link
-                href="#yoga"
-                className="text-white p-3 hover:text-gray-300 transition-all"
-                onClick={() => handleLinkClick("#yoga")}
-              >
-                Code
-              </Link>
-            </li>
-            <li className={activeLink === "#idiomas" 
+          <li className={activeLink === "/gptAi" 
               ?  "ml-0 rounded-xl bg-selectedB list-none font-bold" 
               : "ml-0 list-none font-bold"}>
               <Link
-                href="#idiomas"
+                href="/gptAi"
                 className="text-white p-3 hover:text-gray-300 transition-all"
-                onClick={() => handleLinkClick("#idiomas")}
-              >
-                Langues
-              </Link>
-            </li>
-            <li className={activeLink === "#genio" 
-              ?  "ml-0 rounded-xl bg-selectedB list-none font-bold" 
-              : "ml-0 list-none font-bold"}>
-              <Link
-                href="#genio"
-                className="text-white p-3 hover:text-gray-300 transition-all"
-                onClick={() => handleLinkClick("#genio")}
+                onClick={() => handleLinkClick("/gptAi")}
               >
                 GPT4
               </Link>
             </li>
+          
+          
+            
+            <li className={activeLink === "codeAi" 
+              ?  " ml- rounded-xl bg-selectedB list-none font-bold" 
+              : "ml-0 list-none font-bold"}>
+              <Link
+                href="codeAi"
+                className="text-white p-3 hover:text-gray-300 transition-all"
+                onClick={() => handleLinkClick("codeAi")}
+              >
+                Code
+              </Link>
+            </li>
+            <li className={activeLink === "/languagesAi" 
+              ?  "ml-0 rounded-xl bg-selectedB list-none font-bold" 
+              : "ml-0 list-none font-bold"}>
+              <Link
+                href="/languagesAi"
+                className="text-white p-3 hover:text-gray-300 transition-all"
+                onClick={() => handleLinkClick("/languagesAi")}
+              >
+                Langues
+              </Link>
+            </li>
+
+            <li
+              className={activeLink === "/trekking" ?  "ml-0 rounded-xl bg-selectedB list-none font-bold" : "ml-0 list-none font-bold"}
+            >
+              <Link
+                href="/trekking"
+                className="text-white p-3 hover:text-gray-300 transition-all"
+                onClick={() => handleLinkClick("/trekking")} // Actualiza el enlace activo
+              >
+                Randonnée
+              </Link>
+            </li>
+            
           </ul>
         </nav>
       </div>

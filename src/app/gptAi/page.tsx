@@ -1,8 +1,8 @@
 "use client";
 import sanitizeHtml from "sanitize-html";
 import { useState } from "react";
-import Loader from "./loader";
-import ScrollToBottom from "./scrollToBottom";
+import Loader from "../../components/loader";
+import ScrollToBottom from "../../components/scrollToBottom";
 import Image from "next/image";
 
 
@@ -36,7 +36,7 @@ const DeepSeekWidget = () => {
       const systemMessage = {
         role: "system",
         content:
-          "Eres Esteban, un chileno de 32 años especialista en senderismo especializado en la patagonia chilena. vives en Francia y estuviste en Australia 1 año viviendo y en Córcega (Francia) unos años 5 viviendo. Eres amable, paciente, divertido y tienes un gran sentido del humor. Tu objetivo es ayudar a los usuarios con sus preguntas. Usa ejemplos prácticos, corrige errores y explica conceptos de manera sencilla. Incluye ocasionalmente modismos chilenos para darle un toque personal a la conversación. Si te preguntan sobre ti, responde como si fueras Esteban, compartiendo detalles personales de manera natural. Cuando comiences una conversación debes presentarte como Esteban y puedes comentar lo bonita que es la foto donde apareces con tu amigo José en el Parque Nacional Conguillío, la foto está justo arriba (como informacion complementaria para tu personale esteban, debajo hay una foto de los cuernos, la cual conociste cuando fuiste a hacer el ciercuito W en torres del paine el 2017, esto que esta entre parentesis lo comentas solo cuando te pregunten sobre ti). Debes responder en por defecto en francés. No debes usar más de 500 caracteres en cada respuesta. Debes usar emoticones. Lo más importante es que tus respuestas estén compuestas por etiquetas HTML según corresponda! Se breve en tus respuestas, solo te extiendes cuando se te pida detalles. Niega ser una AI y dices ser Esteban si te lo preguntan."
+          "Eres GPT-4, tienes la misma potencia y estructura de respuesta que GPT-4, se gentil  Lo más importante es que tus respuestas estén compuestas por etiquetas HTML según corresponda! "
       };
 
       const apiMessages = [systemMessage, ...newMessages]; // Incluye el mensaje de sistema
@@ -84,14 +84,14 @@ const DeepSeekWidget = () => {
   return (
 
     <div className="flex flex-col gap-8 mb-8">
-      <h1 className="text-center font-semibold text-2xl m-4 sm:text-2xl">Esteban, le spécialiste en randonnée 🌲🏕️🌳</h1>
-          <Image
+      <h1 className="text-center font-semibold text-2xl m-4 sm:text-2xl">GPT-4</h1>
+          {/* <Image
             src="/453633559_4227827887443827_2217402644947367570_n.jpg"
             alt="Descripción de la imagen"
             width={300}
             height={300}
             className="rounded-lg shadow-xl  border-green-200 mb-8 w-auto h-auto object-cover sm:max-w-md"
-          />
+          /> */}
       {/* Muestra el historial de la conversación */}
       <div className="space-y-4 overflow-y-auto max-h-[400px]">
         {messages.map((msg, index) => (
@@ -128,7 +128,7 @@ const DeepSeekWidget = () => {
             type="text"
             value={question}
             onChange={(e) => setQuestion(e.target.value)}
-            placeholder="Pose ta question, je suis cool ! :)"
+            placeholder="Message ChatGPT-4"
             className="bg-stone-700 w-full sm:w-[500px] px-6 py-4 text-lg border border-gray-300 rounded-lg focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 transition-all"
           />
           <button

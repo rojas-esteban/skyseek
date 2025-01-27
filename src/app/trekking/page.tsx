@@ -1,8 +1,8 @@
 "use client";
 import sanitizeHtml from "sanitize-html";
 import { useState } from "react";
-import Loader from "./loader";
-import ScrollToBottom from "./scrollToBottom";
+import Loader from "../../components/loader";
+import ScrollToBottom from "../../components/scrollToBottom";
 import Image from "next/image";
 
 
