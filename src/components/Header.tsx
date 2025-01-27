@@ -20,7 +20,7 @@ const Header: React.FC = () => {
         <nav className="flex flex-row justify-center">
         <Link
                 href="#home"
-                className="pl-4 m-auto"
+                className="p-2 m-auto"
                 onClick={() => handleLinkClick("#home")} // Actualiza el enlace activo
               >
                 <Image
