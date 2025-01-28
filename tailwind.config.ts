@@ -17,6 +17,8 @@ export default {
         yellowtwo: '#E3C75F',
         selectedB: 'rgba(52, 61, 70, 0.5)',
         calipso: "#09a698",
+        reactColor: "#61DAFB",
+        typeScriptColor: "#3178C6",
       },
     },
   },

@@ -32,17 +32,19 @@ const Header: React.FC = () => {
                   />
               </Link>
           <ul className="flex space-x-6">
-          <li className={activeLink === "/gptAi" 
-              ?  "ml-0 rounded-xl bg-selectedB list-none font-bold" 
-              : "ml-0 list-none font-bold"}>
+
+          <li
+              className={activeLink === "/trekking" ?  "ml-0 rounded-xl bg-selectedB list-none font-bold" : "ml-0 list-none font-bold"}
+            >
               <Link
-                href="/gptAi"
+                href="/trekking"
                 className="text-white p-3 hover:text-gray-300 transition-all"
-                onClick={() => handleLinkClick("/gptAi")}
+                onClick={() => handleLinkClick("/trekking")} // Actualiza el enlace activo
               >
-                GPT4
+                Randonnée
               </Link>
             </li>
+         
           
           
             
@@ -57,6 +59,19 @@ const Header: React.FC = () => {
                 Code
               </Link>
             </li>
+
+            <li className={activeLink === "/gptAi" 
+              ?  "ml-0 rounded-xl bg-selectedB list-none font-bold" 
+              : "ml-0 list-none font-bold"}>
+              <Link
+                href="/gptAi"
+                className="text-white p-3 hover:text-gray-300 transition-all"
+                onClick={() => handleLinkClick("/gptAi")}
+              >
+                GPT-4
+              </Link>
+            </li>
+
             <li className={activeLink === "/languagesAi" 
               ?  "ml-0 rounded-xl bg-selectedB list-none font-bold" 
               : "ml-0 list-none font-bold"}>
@@ -69,17 +84,7 @@ const Header: React.FC = () => {
               </Link>
             </li>
 
-            <li
-              className={activeLink === "/trekking" ?  "ml-0 rounded-xl bg-selectedB list-none font-bold" : "ml-0 list-none font-bold"}
-            >
-              <Link
-                href="/trekking"
-                className="text-white p-3 hover:text-gray-300 transition-all"
-                onClick={() => handleLinkClick("/trekking")} // Actualiza el enlace activo
-              >
-                Randonnée
-              </Link>
-            </li>
+            
             
           </ul>
         </nav>
