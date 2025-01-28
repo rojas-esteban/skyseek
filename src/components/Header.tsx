@@ -68,7 +68,7 @@ const Header: React.FC = () => {
                 className="text-white p-3 hover:text-gray-300 transition-all"
                 onClick={() => handleLinkClick("/gptAi")}
               >
-                GPT-4
+                GPT4
               </Link>
             </li>
 
