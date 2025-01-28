@@ -11,7 +11,7 @@ export default function Home() {
         
       <div className="flex flex-col items-center  ">
         <h1 className="font-bold text-2xl p-8">Choisis ton IA ! 🤖</h1>
-        <ul className="grid grid-cols-1 max-sm:grid-cols-2  gap-4 list-none">
+        <ul className="grid grid-cols-1 sm:grid-cols-2  gap-4 list-none">
             
 
               <li
