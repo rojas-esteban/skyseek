@@ -34,7 +34,7 @@ const Footer: React.FC = () => {
 
 </ul>
 
-          <div className="flex  justify-center p-1 gap-4">
+          <div className="flex  justify-center p-1 mb-2 gap-4">
             
             <img src="/deepseek.png" alt="React" className="w-5 h-5 bg-deepTeal p-1 shadow-lg rounded-lg transform hover:scale-150 transition duration-300  "/>
             <img src="/react.svg" alt="React" className="w-5 h-5 bg-reactColor p-1 shadow-lg rounded-lg transform hover:scale-150 transition duration-300  "/>
