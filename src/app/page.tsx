@@ -11,15 +11,19 @@ export default function Home() {
         
       <div className="flex flex-col items-center  ">
         <h1 className="font-bold text-2xl p-8">Choisis ton IA ! 🤖</h1>
-        <ul className="flex flex-col sm:flex-row gap-4 list-none">
-            <li className={""}>
+        <ul className="grid grid-cols-1 max-sm:grid-cols-2  gap-4 list-none">
+            
+
+              <li
+                className={""}
+              >
                 <Link
-                  href="/gptAi"
+                  href="/trekking"
                   className="text-white  hover:text-gray-300 transition-all"
         
                 >
-                  <div className="p-12 flex  justify-center text-lg font-bold bg-white text-black shadow-lg rounded-lg transform hover:scale-105 transition duration-300 hover:bg-calipso max-sm:bg-calipso ">
-                  GPT4
+                  <div className="p-12 flex  justify-center text-lg font-bold bg-white text-black shadow-lg rounded-lg transform hover:scale-105 transition duration-300 hover:bg-calipso max-sm:bg-calipso max-sm:gap- ">
+                  Randonnée
                   </div>
                 </Link>
               </li>
@@ -37,6 +41,19 @@ export default function Home() {
                   </div>
                 </Link>
               </li>
+
+              <li className={""}>
+                <Link
+                  href="/gptAi"
+                  className="text-white  hover:text-gray-300 transition-all"
+        
+                >
+                  <div className="p-12 flex  justify-center text-lg font-bold bg-white text-black shadow-lg rounded-lg transform hover:scale-105 transition duration-300 hover:bg-calipso max-sm:bg-calipso ">
+                  GPT-4
+                  </div>
+                </Link>
+              </li>
+
               <li className={""}>
                 <Link
                   href="/languagesAi"
@@ -48,19 +65,21 @@ export default function Home() {
                   </div>
                 </Link>
               </li>
+
               <li
                 className={""}
               >
                 <Link
-                  href="/trekking"
+                  href="/coffee"
                   className="text-white  hover:text-gray-300 transition-all"
         
                 >
-                  <div className="p-12 flex  justify-center text-lg font-bold bg-white text-black shadow-lg rounded-lg transform hover:scale-105 transition duration-300 hover:bg-calipso max-sm:bg-calipso max-sm:gap- ">
-                  Randonnée
+                  <div className="p-12 flex text-center  justify-center text-lg font-bold bg-white text-black shadow-lg rounded-lg transform hover:scale-105 transition duration-300 hover:bg-calipso max-sm:bg-calipso ">
+                  Coffee Shop Master
                   </div>
                 </Link>
               </li>
+              
               </ul>
       </div>
 
