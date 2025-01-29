@@ -171,7 +171,7 @@ useEffect(() => {
                     <ul className="list-none">
                       <li>USD: ${divisas.market_data.current_price.usd.toLocaleString()}</li>
                       <li>EUR: €{divisas.market_data.current_price.eur.toLocaleString()}</li>
-                      <li>BTC: Ƀ{divisas.market_data.current_price.btc.toLocaleString()}</li>
+                      <li>BTC: Ƀ{divisas.market_data.current_price.btc.toFixed(5)}</li>
                       <li>CLP: ${divisas.market_data.current_price.clp.toLocaleString()}</li>
                       <li>ARS: ${divisas.market_data.current_price.ars.toLocaleString()}</li>
                       <li>AUD: ${divisas.market_data.current_price.aud.toLocaleString()}</li>
