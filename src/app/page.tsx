@@ -10,13 +10,13 @@ export default function Home() {
      
 
         
-      <div className="flex flex-col items-center  ">
+      <div className="flex flex-col items-center mb-16 ">
       <Image
             src="/ssasasa.png"
             alt="titre: Choisis ton AI"
-            width={400}
-            height={400}
-            className="rounded-lg  m-4 shadow-xl  border-green-200  w-auto h-auto object-cover sm:max-w-md "
+            width={350}
+            height={350}
+            className="rounded-lg  m-4 mt-12 shadow-xl  border-green-200  w-auto h-auto object-cover sm:max-w-md "
           />
             
         <ul className="grid grid-cols-1 sm:grid-cols-2  gap-4 list-none">
@@ -97,7 +97,7 @@ export default function Home() {
         
                 >
                   <div className="p-12 flex text-center  justify-center text-lg font-bold bg-white text-black shadow-lg rounded-lg transform hover:scale-105 transition duration-300 hover:bg-calipso max-sm:bg-calipso ">
-                  Test
+                  Cryptomonnaies
                   </div>
                 </Link>
               </li>
