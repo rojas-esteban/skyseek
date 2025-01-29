@@ -111,21 +111,23 @@ useEffect(() => {
                 className="rounded-lg bg-black shadow-xl p-5 border-green-200 w-auto h-auto object-cover sm:max-w-md"
               />
             </div>
+            <h3 className="text-center  text-calipso font-bold">Données mises à jour le: {fechaNormal}</h3>
 
             <p className="text-white text-center m-4">
-              Le ATH de {divisas.name} est de {divisas.market_data.ath.usd} USD et son prix actuel est de {divisas.market_data.current_price.usd} USD.
+              Le prix actuel de {divisas.name} est de <span className="text-blue-500 font-bold">{divisas.market_data.current_price.usd}</span>USD, et son ATH est de <span className="text-blue-500 font-bold">{divisas.market_data.ath.usd}</span>USD.
+            </p>
+
+
+            <p className="text-white text-center m-4">
+            <span className="text-blue-500 font-bold">{divisas.sentiment_votes_up_percentage}% </span> du marché retail pense que le prix du {divisas.name} va augmenter, tandis que <span className="text-blue-500 font-bold">{divisas.sentiment_votes_down_percentage} %</span> pensent qu'il va baisser
             </p>
 
             <p className="text-white text-center m-4">
-              {divisas.sentiment_votes_up_percentage} % du marché retail pense que le prix du {divisas.name} va augmenter, tandis que {divisas.sentiment_votes_down_percentage} % pensent qu'il va baisser
+              {divisas.name} est positionnée comme la cryptomonnaie <span className="text-blue-500 font-bold">numéro {divisas.market_cap_rank}</span> en capitalisation boursière avec un market cap de <span className="text-blue-500 font-bold">{divisas.market_data.market_cap.usd.toLocaleString()}</span> USD. 
             </p>
 
             <p className="text-white text-center m-4">
-              {divisas.name} est positionnée comme la cryptomonnaie numéro {divisas.market_cap_rank} en capitalisation boursière avec un market cap de {divisas.market_data.market_cap.usd.toLocaleString()} USD. 
-            </p>
-
-            <p className="text-white text-center m-4">
-              Il existe {Number(divisas.watchlist_portfolio_users).toLocaleString()} portefeuilles actifs de {divisas.name}.
+              Il existe <span className="text-blue-500 font-bold">{Number(divisas.watchlist_portfolio_users).toLocaleString()}</span> portefeuilles actifs de {divisas.name}.
             </p>
 
           <h2 className="text-2xl text-calipso font-bold text-center">Fluctuation des prix du {divisas.name}</h2>
@@ -158,7 +160,7 @@ useEffect(() => {
                 <div className="text-center m-4">
                     <h2 className="text-2xl text-calipso font-bold text-center">Données de l'offre</h2>
                     <ul className="list-none">
-                      <li>Le supply maximum de {divisas.name} est de {divisas.market_data.total_supply.toLocaleString()}</li>
+                      <li>Le supply maximum de {divisas.name} est de <span className="text-blue-500 font-bold">{divisas.market_data.total_supply.toLocaleString()}</span></li>
                       {divisas.market_data.max_supply
                       ? (<li>Le supply circulant actuel de {divisas.name} est de {divisas.market_data.max_supply.toLocaleString()}, soit {((divisas.market_data.total_supply / divisas.market_data.max_supply) * 100).toFixed(2)}% du total. </li>)
                       :""}
