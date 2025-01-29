@@ -83,7 +83,7 @@ const DeepSeekWidget = () => {
 
   return (
 
-    <div className="flex flex-col gap-8 mb-8">
+    <div className="flex flex-col gap-8 mt-12">
       <h1 className="text-center font-semibold text-2xl m-4 sm:text-2xl">Ricardo, The CoffeeShop Master ☕ 🥐 🍪</h1>
       <Image
             src="/Café-y-cocktails_IVI8344.jpg"
