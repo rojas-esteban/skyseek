@@ -83,7 +83,7 @@ const DeepSeekWidget = () => {
 
   return (
 
-    <div className="flex flex-col gap-8 mt-12">
+    <div className="flex flex-col gap-2 mb-12 p-8 mt-16">
       <h1 className="text-center font-semibold text-2xl m-4 sm:text-2xl">Esteban, le spécialiste en randonnée 🌲🏕️🌳</h1>
       <Image
             src="/453633559_4227827887443827_2217402644947367570_n.jpg"

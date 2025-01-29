@@ -1,7 +1,7 @@
 "use client"
 import { useEffect, useState } from "react";
 import Loader from "@/components/loader";
-import type { CoinMarketData, CoinData, HistoricItem } from "../../../src/types/cryptoDevi";
+import type { CoinMarketData, CoinData, HistoricItem } from "../../types/cryptoDevi";
 import Image from "next/image";
 
 export default function Coingecko() {
@@ -99,7 +99,7 @@ useEffect(() => {
       {divisas ? (
 
           
-        <div className="flex flex-col bg-deepTeal justify-center">
+        <div className="flex flex-col w-screen bg-deepTeal justify-center">
 
             <div className="flex items-center justify-center space-x-4 p-2">
             <h1 className="text-3xl text-calipso font-bold">{divisas.name}</h1>
@@ -154,7 +154,7 @@ useEffect(() => {
             </ul>
 
                     
-          <div className="flex  mb-16">
+          <div className="flex  mb-16 justify-center ">
                 <div className="text-center m-4">
                     <h2 className="text-2xl text-calipso font-bold text-center">Données de l'offre</h2>
                     <ul className="list-none">

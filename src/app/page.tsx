@@ -92,7 +92,7 @@ export default function Home() {
                 className={""}
               >
                 <Link
-                  href="/coingecko"
+                  href="/crypto"
                   className="text-white  hover:text-gray-300 transition-all"
         
                 >

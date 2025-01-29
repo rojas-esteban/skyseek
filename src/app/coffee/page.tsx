@@ -83,7 +83,7 @@ const DeepSeekWidget = () => {
 
   return (
 
-    <div className="flex flex-col gap-8 mt-12">
+    <div className="flex flex-col gap-8 mb-12 p-8 mt-16">
       <h1 className="text-center font-semibold text-2xl m-4 sm:text-2xl">Ricardo, The CoffeeShop Master ☕ 🥐 🍪</h1>
       <Image
             src="/Café-y-cocktails_IVI8344.jpg"
@@ -103,7 +103,7 @@ const DeepSeekWidget = () => {
                 : "bg-geenshot  mr-auto max-w-[90%] "
             }`}
           >
-            <strong>{msg.role === "user" ? "Tú" : "Esteban"}:</strong>
+            <strong>{msg.role === "user" ? "Tú" : "Ricardo"}:</strong>
 
             {msg.role === "assistant" ? (
               <div
