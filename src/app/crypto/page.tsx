@@ -160,24 +160,31 @@ useEffect(() => {
                 <div className="text-center m-4">
                     <h2 className="text-2xl text-calipso font-bold text-center">Données de l'offre</h2>
                     <ul className="list-none">
-                      <li>Le supply maximum de {divisas.name} est de <span className="text-blue-500 font-bold">{divisas.market_data.total_supply.toLocaleString()}</span></li>
+                      <li>Le supply maximum de {divisas.name} est de <span className="text-blue-500 font-bold">{divisas.market_data.max_supply.toLocaleString()}</span></li>
                       {divisas.market_data.max_supply
-                      ? (<li>Le supply circulant actuel de {divisas.name} est de {divisas.market_data.max_supply.toLocaleString()}, soit {((divisas.market_data.total_supply / divisas.market_data.max_supply) * 100).toFixed(2)}% du total. </li>)
+                      ? (<li>Le supply circulant actuel de {divisas.name} est de <span className="text-blue-500 font-bold" >{divisas.market_data.total_supply.toLocaleString()}</span>, soit <span className="text-blue-500 font-bold">{((divisas.market_data.total_supply / divisas.market_data.max_supply) * 100).toFixed(2)}%</span> du total. </li>)
                       :""}
-                      <li>Il est possible de créer plus de {divisas.name} ? :  {divisas.market_data.max_supply_infinite ? "YES" : "NO"}.</li>
+                      <li>Il est possible de créer plus de {divisas.name} ? :  <span className="text-blue-500 font-bold">{divisas.market_data.max_supply_infinite ? "YES" : "NO"}</span>.</li>
                     </ul>
                 </div>
               
                 <div className="text-center m-4">
                     <h2  className="text-2xl text-calipso font-bold text-center" >{divisas.name} {fechaNormal}:</h2>
                     <ul className="list-none">
-                      <li>USD: ${divisas.market_data.current_price.usd.toLocaleString()}</li>
-                      <li>EUR: €{divisas.market_data.current_price.eur.toLocaleString()}</li>
-                      <li>BTC: Ƀ{divisas.market_data.current_price.btc.toFixed(5)}</li>
-                      <li>CLP: ${divisas.market_data.current_price.clp.toLocaleString()}</li>
-                      <li>ARS: ${divisas.market_data.current_price.ars.toLocaleString()}</li>
-                      <li>AUD: ${divisas.market_data.current_price.aud.toLocaleString()}</li>
-                      <li>CAD: ${divisas.market_data.current_price.cad.toLocaleString()}</li>
+                      <li>USD: $ <span className="text-blue-500 " > {divisas.market_data.current_price.usd.toLocaleString()}
+                        </span> </li>
+                      <li>EUR: € <span className="text-blue-500 " > {divisas.market_data.current_price.eur.toLocaleString()}
+                        </span> </li>
+                      <li>BTC: Ƀ <span className="text-blue-500 " > {divisas.market_data.current_price.btc.toFixed(5)}
+                        </span> </li>
+                      <li>CLP: $ <span className="text-blue-500 " > {divisas.market_data.current_price.clp.toLocaleString()}
+                        </span> </li>
+                      <li>ARS: $ <span className="text-blue-500 " > {divisas.market_data.current_price.ars.toLocaleString()}
+                        </span> </li>
+                      <li>AUD: $ <span className="text-blue-500 " > {divisas.market_data.current_price.aud.toLocaleString()}
+                        </span> </li>
+                      <li>CAD: $ <span className="text-blue-500 " > {divisas.market_data.current_price.cad.toLocaleString()}
+                        </span> </li>
                     </ul>
                 </div>
              </div>
