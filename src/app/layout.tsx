@@ -34,7 +34,7 @@ export default function RootLayout({
         <div className=" grid bg-deepTeal grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 sm:p-8 pb-20 gap-16 font-[family-name:var(--font-geist-sans)] ">
 
           
-        <main className="flex flex-col row-start-2 justify-around items-center h-full w-full">
+        <main className="flex flex-col row-start-2 justify-between items-center h-full w-full">
           
         {children}
         

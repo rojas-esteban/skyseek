@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 
 export default function Home() {
@@ -10,7 +11,14 @@ export default function Home() {
 
         
       <div className="flex flex-col items-center  ">
-        <h1 className="font-bold text-2xl p-8">Choisis ton IA ! 🤖</h1>
+      <Image
+            src="/ssasasa.png"
+            alt="titre: Choisis ton AI"
+            width={400}
+            height={400}
+            className="rounded-lg  m-4 shadow-xl  border-green-200  w-auto h-auto object-cover sm:max-w-md "
+          />
+            
         <ul className="grid grid-cols-1 sm:grid-cols-2  gap-4 list-none">
             
 
