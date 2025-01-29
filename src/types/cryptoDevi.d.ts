@@ -45,7 +45,9 @@ interface CoinData {
     links: {
       blockchain_site: string[];
     };
-    image: object;
+    image: {
+      large: string;     
+    };
     country_origin: string;
     genesis_date: string;
     sentiment_votes_up_percentage: number;
