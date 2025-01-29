@@ -25,13 +25,13 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className="">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased `}
       >
         <Header/>
 
-        <div className=" grid bg-deepTeal grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 sm:p-8 pb-20 gap-16 font-[family-name:var(--font-geist-sans)] ">
+        <div className=" grid min-h-screen bg-deepTeal h-inherit sm:h-inherit grid-rows-[20px_1fr_20px]  items-center justify-items-center   gap-16 font-[family-name:var(--font-geist-sans)] ">
 
           
         <main className="flex flex-col row-start-2 justify-between items-center h-full w-full">

@@ -87,6 +87,20 @@ export default function Home() {
                   </div>
                 </Link>
               </li>
+
+              <li
+                className={""}
+              >
+                <Link
+                  href="/coingecko"
+                  className="text-white  hover:text-gray-300 transition-all"
+        
+                >
+                  <div className="p-12 flex text-center  justify-center text-lg font-bold bg-white text-black shadow-lg rounded-lg transform hover:scale-105 transition duration-300 hover:bg-calipso max-sm:bg-calipso ">
+                  Test
+                  </div>
+                </Link>
+              </li>
               
               </ul>
       </div>
