@@ -41,7 +41,7 @@ const Header: React.FC = () => {
                 className="text-white p-3 hover:text-gray-300 transition-all"
                 onClick={() => handleLinkClick("/trekking")} // Actualiza el enlace activo
               >
-                Randonnée
+                Esteban
               </Link>
             </li>
          

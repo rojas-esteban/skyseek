@@ -31,7 +31,7 @@ export default function Home() {
         
                 >
                   <div className="p-12 flex  justify-center text-lg font-bold bg-white text-black shadow-lg rounded-lg transform hover:scale-105 transition duration-300 hover:bg-calipso max-sm:bg-calipso max-sm:gap- ">
-                  Randonnée
+                  Esteban
                   </div>
                 </Link>
               </li>

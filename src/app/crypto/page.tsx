@@ -73,25 +73,29 @@ useEffect(() => {
       ) : (
 
         
+
         
-        <form onSubmit={handleSubmit} className="flex flex-col justify-center sm:flex-row gap-4">
-          <select
-            value={question}
-            onChange={(e) => setQuestion(e.target.value)}
-            className="text-violet-700 bg-black text-center"
-          >
-            <option value="bitcoin">Bitcoin</option>
-            <option value="ethereum">Ethereum</option>
-            <option value="chainlink">Chainlink</option>
-            <option value="solana">Solana</option>
-            <option value="aave">Aave</option>
-            <option value="cardano">Cardano</option>
-            <option value="polkadot">Polkadot</option>
-            <option value="dogecoin">Dogecoin</option>
-            <option value="pepe">Pepe</option>
-          </select>
-          
-        </form>
+          <div className="flex justify-center gap-4">
+            <p>Choisis ta crypto ➡️</p>
+                    <form onSubmit={handleSubmit} className="flex flex-col justify-center sm:flex-row gap-4">
+            <select
+              value={question}
+              onChange={(e) => setQuestion(e.target.value)}
+              className="text-violet-700 bg-black text-center"
+            >
+              <option value="bitcoin">Bitcoin</option>
+              <option value="ethereum">Ethereum</option>
+              <option value="chainlink">Chainlink</option>
+              <option value="solana">Solana</option>
+              <option value="aave">Aave</option>
+              <option value="cardano">Cardano</option>
+              <option value="polkadot">Polkadot</option>
+              <option value="dogecoin">Dogecoin</option>
+              <option value="pepe">Pepe</option>
+            </select>
+            
+                    </form>
+          </div>
       )}
 
       {error && <p style={{ color: "red" }}>{error}</p>}
@@ -160,7 +164,9 @@ useEffect(() => {
                 <div className="text-center m-4">
                     <h2 className="text-2xl text-calipso font-bold text-center">Données de l'offre</h2>
                     <ul className="list-none">
-                      <li>Le supply maximum de {divisas.name} est de <span className="text-blue-500 font-bold">{divisas.market_data.max_supply.toLocaleString()}</span></li>
+                      { divisas.market_data.max_supply 
+                      ? (<li>Le supply maximum de {divisas.name} est de <span className="text-blue-500 font-bold">{divisas.market_data.max_supply.toLocaleString()}</span> </li>)
+                      : ""}
                       {divisas.market_data.max_supply
                       ? (<li>Le supply circulant actuel de {divisas.name} est de <span className="text-blue-500 font-bold" >{divisas.market_data.total_supply.toLocaleString()}</span>, soit <span className="text-blue-500 font-bold">{((divisas.market_data.total_supply / divisas.market_data.max_supply) * 100).toFixed(2)}%</span> du total. </li>)
                       :""}
