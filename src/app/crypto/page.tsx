@@ -33,7 +33,7 @@ export default function Coingecko() {
 const fechaNormal = divisas ? new Date(divisas.last_updated).toLocaleString() : '';
 
 const handleSubmit = async (e: React.FormEvent) => {
-    console.log("heeeeere2");
+    //console.log("heeeeere2");
     
     e.preventDefault();
     setIsLoading(true);
@@ -46,7 +46,7 @@ useEffect(() => {
       
       setIsLoading(true);
       try {
-        console.log("heeeeere3");
+        //console.log("heeeeere3");
 
         const responseInfoAbaut = await fetch(`https://api.coingecko.com/api/v3/coins/${question ||"bitcoin"}/`);
         if (!responseInfoAbaut.ok) throw new Error('Error al obtener los datos');
